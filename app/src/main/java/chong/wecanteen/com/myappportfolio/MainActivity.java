@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void init() {
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
-        btn3 = (Button) findViewById(R.id.btn3);
-        btn4 = (Button) findViewById(R.id.btn4);
-        btn5 = (Button) findViewById(R.id.btn5);
-        btn6 = (Button) findViewById(R.id.btn6);
+        btn1 = (Button) findViewById(R.id.app_main_btn_1);
+        btn2 = (Button) findViewById(R.id.app_main_btn_2);
+        btn3 = (Button) findViewById(R.id.app_main_btn_3);
+        btn4 = (Button) findViewById(R.id.app_main_btn_4);
+        btn5 = (Button) findViewById(R.id.app_main_btn_5);
+        btn6 = (Button) findViewById(R.id.app_main_btn_6);
     }
 
     public void setOnClickListenerAllButton() {
@@ -43,31 +43,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn6.setOnClickListener(MainActivity.this);
     }
 
-    public void showToast(String msg) {
-        Toast.makeText(MainActivity.this, "This button will launch my "
-                + msg + " app!", Toast.LENGTH_SHORT).show();
+    public void showToastMessage(int resId) {
+        Toast.makeText(MainActivity.this, resId, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn1:
-                showToast(btn1.getText().toString());
+            case R.id.app_main_btn_1:
+                showToastMessage(R.string.popular_movies);
                 break;
-            case R.id.btn2:
-                showToast(btn2.getText().toString());
+            case R.id.app_main_btn_2:
+                showToastMessage(R.string.stock_hawk);
                 break;
-            case R.id.btn3:
-                showToast(btn3.getText().toString());
+            case R.id.app_main_btn_3:
+                showToastMessage(R.string.build_it_bigger);
                 break;
-            case R.id.btn4:
-                showToast(btn4.getText().toString());
+            case R.id.app_main_btn_4:
+                showToastMessage(R.string.make_your_app_material);
                 break;
-            case R.id.btn5:
-                showToast(btn5.getText().toString());
+            case R.id.app_main_btn_5:
+                showToastMessage(R.string.go_ubiquitous);
                 break;
-            case R.id.btn6:
-                showToast(btn6.getText().toString());
+            case R.id.app_main_btn_6:
+                showToastMessage(R.string.capstone);
                 break;
         }
     }
